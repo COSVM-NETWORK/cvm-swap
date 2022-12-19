@@ -9,6 +9,7 @@ import { FortmaticConnector } from './Fortmatic'
 import { NetworkConnector } from './NetworkConnector'
 import DIFFUSION_LOGO_URL from '../assets/svg/logo.svg'
 import { ChainId, NETWORK_URLS } from '../constants/chains'
+import { KeplrConnector } from './KeplrConnector'
 
 // const INFURA_KEY = process.env.REACT_APP_INFURA_KEY
 const FORMATIC_KEY = process.env.REACT_APP_FORTMATIC_KEY
@@ -50,6 +51,10 @@ export const walletconnect = new WalletConnectConnector({
   // bridge: WALLETCONNECT_BRIDGE_URL,
   qrcode: true,
   pollingInterval: 15000,
+})
+
+export const keplr = new KeplrConnector({
+  supportedChainIds: SUPPORTED_CHAIN_IDS,
 })
 
 // // mainnet only

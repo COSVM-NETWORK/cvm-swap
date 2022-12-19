@@ -1,4 +1,5 @@
 import { createWeb3ReactRoot, Web3ReactProvider } from '@web3-react/core'
+import { Window as KeplrWindow } from '@keplr-wallet/types'
 import 'inter-ui'
 import React, { StrictMode } from 'react'
 import { isMobile } from 'react-device-detect'
@@ -106,10 +107,11 @@ ReactDOM.render(
 )
 
 declare global {
-  interface Window {
+  interface Window extends KeplrWindow {
     $getLibrary: typeof getLibrary
   }
 }
+
 function ExposeProvider() {
   const { library } = useActiveWeb3React()
   window.$getLibrary = () => library!

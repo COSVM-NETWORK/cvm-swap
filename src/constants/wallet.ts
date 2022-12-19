@@ -5,9 +5,12 @@ import INJECTED_ICON_URL from '../assets/images/arrow-right.svg'
 import METAMASK_ICON_URL from '../assets/images/metamask.png'
 // import PORTIS_ICON_URL from '../assets/images/portisIcon.png'
 import WALLETCONNECT_ICON_URL from '../assets/images/walletConnectIcon.svg'
+import KEPLR_ICON_URL from '../assets/images/keplr.svg'
+
 import {
   // fortmatic,
   injected,
+  keplr,
   // portis,
   walletconnect,
   //  walletlink
@@ -26,6 +29,15 @@ export interface WalletInfo {
 }
 
 export const SUPPORTED_WALLETS: { [key: string]: WalletInfo } = {
+  KEPLR: {
+    connector: keplr,
+    name: 'Keplr',
+    iconURL: KEPLR_ICON_URL,
+    description: 'Cosmos wallet extension',
+    href: null,
+    color: '#E8831D',
+    primary: true,
+  },
   INJECTED: {
     connector: injected,
     name: 'Injected',
@@ -33,7 +45,6 @@ export const SUPPORTED_WALLETS: { [key: string]: WalletInfo } = {
     description: 'Injected web3 provider.',
     href: null,
     color: '#010101',
-    primary: true,
   },
   METAMASK: {
     connector: injected,
